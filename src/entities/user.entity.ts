@@ -14,7 +14,7 @@ import { Contacts } from "./contacts.entity";
 @Entity("users")
 export class User {
   @PrimaryGeneratedColumn("uuid")
-  id: number;
+  id: string;
 
   @Column({ length: 80 })
   name: string;
@@ -25,7 +25,7 @@ export class User {
   @Column({ length: 125 })
   password: string;
 
-  @Column({ length: 9, type: "varchar" })
+  @Column({ length: 11, type: "varchar" })
   phone: string;
 
   @CreateDateColumn({ type: "date" })

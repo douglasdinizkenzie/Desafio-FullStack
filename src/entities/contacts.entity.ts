@@ -10,7 +10,7 @@ import { User } from "./user.entity";
 @Entity("contacts")
 export class Contacts {
   @PrimaryGeneratedColumn("uuid")
-  id: number;
+  id: string;
 
   @CreateDateColumn({ type: "date" })
   registered: string;
