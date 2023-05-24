@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 import { TLogin } from "../interfaces/login.interface";
 import { loginService } from "../services/login/login.service";
 

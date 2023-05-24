@@ -4,6 +4,7 @@ import { userSchemaRequest, userSchemaUpdate } from "../schemas/users.schemas";
 import { ensureEmailIsUniqueMiddleware } from "../middlewares/ensureEmailIsUnique.middleware";
 import {
   createUserController,
+  deleteUserController,
   updateUserController,
 } from "../controllers/users.controllers";
 import { ensureIsAuthMiddleware } from "../middlewares/ensureIsAuth.middleware";
@@ -23,3 +24,5 @@ usersRoutes.patch(
   ensureDataIsValidMiddleware(userSchemaUpdate),
   updateUserController
 );
+
+usersRoutes.delete("", ensureIsAuthMiddleware, deleteUserController);
