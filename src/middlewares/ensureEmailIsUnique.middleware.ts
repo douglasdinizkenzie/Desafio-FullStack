@@ -11,10 +11,8 @@ export const ensureEmailIsUniqueMiddleware = async (
 ): Promise<void> => {
   const userRepository: Repository<User> = AppDataSource.getRepository(User);
   const emailRequest: string = req.body.email;
-  const emailUser: User | null = await userRepository.findOne({
-    where: {
-      email: emailRequest,
-    },
+  const emailUser: User | null = await userRepository.findOneBy({
+    email: emailRequest,
   });
 
   if (emailUser) {
