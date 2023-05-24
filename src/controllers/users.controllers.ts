@@ -1,10 +1,12 @@
-import { NextFunction, Request, Response } from "express";
+import { Request, Response } from "express";
 import {
   TUserRequest,
   TUserRequestUpdate,
   TUserResponse,
 } from "../interfaces/users.interfaces";
 import { createUserService } from "../services/users/CreateUsers.service";
+import { updateUserService } from "../services/users/UpdateUser.service";
+import { deleteUserService } from "../services/users/deleteUser.service";
 
 export const createUserController = async (
   req: Request,
@@ -22,6 +24,16 @@ export const updateUserController = async (
 ): Promise<Response> => {
   const id = res.locals.userId;
   const data: TUserRequestUpdate = req.body;
+  const updatedUser: TUserResponse = await updateUserService(id, data);
 
-  return res.status(200).json({ aiai: "to funcionando" });
+  return res.status(200).json(updatedUser);
+};
+
+export const deleteUserController = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
+  const id = res.locals.userId;
+  await deleteUserService(id);
+  return res.status(204).json();
 };

@@ -31,7 +31,7 @@ export class User {
   @CreateDateColumn({ type: "date" })
   createdAt: string;
 
-  @UpdateDateColumn({ type: "date" })
+  @UpdateDateColumn({ type: "date", nullable: true })
   updatedAt: string;
 
   @OneToMany(() => Contacts, (contacts) => contacts.user)
