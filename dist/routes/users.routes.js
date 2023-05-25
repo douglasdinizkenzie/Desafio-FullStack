@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.usersRoutes = void 0;
+const express_1 = require("express");
+const ensureDataIsValid_middleware_1 = require("../middlewares/ensureDataIsValid.middleware");
+const users_schemas_1 = require("../schemas/users.schemas");
+const ensureEmailIsUnique_middleware_1 = require("../middlewares/ensureEmailIsUnique.middleware");
+const users_controllers_1 = require("../controllers/users.controllers");
+const ensureIsAuth_middleware_1 = require("../middlewares/ensureIsAuth.middleware");
+exports.usersRoutes = (0, express_1.Router)();
+exports.usersRoutes.post("", (0, ensureDataIsValid_middleware_1.ensureDataIsValidMiddleware)(users_schemas_1.userSchemaRequest), ensureEmailIsUnique_middleware_1.ensureEmailIsUniqueMiddleware, users_controllers_1.createUserController);
+exports.usersRoutes.patch("", ensureIsAuth_middleware_1.ensureIsAuthMiddleware, (0, ensureDataIsValid_middleware_1.ensureDataIsValidMiddleware)(users_schemas_1.userSchemaUpdate), users_controllers_1.updateUserController);
+exports.usersRoutes.delete("", ensureIsAuth_middleware_1.ensureIsAuthMiddleware, users_controllers_1.deleteUserController);
