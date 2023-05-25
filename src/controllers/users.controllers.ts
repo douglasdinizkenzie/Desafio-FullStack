@@ -22,7 +22,7 @@ export const updateUserController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const id = res.locals.userId;
+  const id: string = res.locals.userId;
   const data: TUserRequestUpdate = req.body;
   const updatedUser: TUserResponse = await updateUserService(id, data);
 
@@ -33,7 +33,7 @@ export const deleteUserController = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const id = res.locals.userId;
+  const id: string = res.locals.userId;
   await deleteUserService(id);
   return res.status(204).json();
 };

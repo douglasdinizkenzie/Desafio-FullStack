@@ -18,7 +18,7 @@ export const ensureContactExistsMiddleware = async (
     throw new AppError("Invalid contact id", 400);
   }
 
-  const contact = await contactRepository.findOne({
+  const contact: Contacts | null = await contactRepository.findOne({
     where: { id: contactId },
   });
   if (!contact) {

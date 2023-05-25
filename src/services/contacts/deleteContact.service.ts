@@ -10,7 +10,7 @@ export const deleteContactService = async (
   const contactRepository: Repository<Contacts> =
     AppDataSource.getRepository(Contacts);
 
-  const contact = await contactRepository
+  const contact: Contacts | null = await contactRepository
     .createQueryBuilder("contacts")
     .where("contacts.id = :idContact", { idContact: contactId })
     .andWhere("contacts.user = :idUser", { idUser: userId })
