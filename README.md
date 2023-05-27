@@ -81,6 +81,10 @@ yarn dev ou npm run dev
 
 ---
 
+#### As requisições podem ser testadas em programas como o [Insomnia](https://insomnia.rest/download), [Postman](https://www.postman.com), etc!
+
+---
+
 ### CREATE USER
 
 ### `/users`
