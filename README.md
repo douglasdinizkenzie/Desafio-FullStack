@@ -72,12 +72,12 @@ yarn dev ou npm run dev
 | POST     | /users     | Criação de um usuário.                  |
 | PATCH    | /users     | Edita o usuário.                        |
 | DELETE   | /users     | Deleta o usuário. 
-| POST     | /login     | Retorna o token
-| POST     | /contacts  | Cria um contato para o usuário
-| GET      | /contacts  | Lista todos os contatos do usuário
-| GET      | /contacts/id | Retorna o contato específico do usuário
-| PATCH    | /contacts/id | Edita o contato específico do usuário
-| DELETE   | /contacts/id | Deleta o contato específico do usuário
+| POST     | /login     | Retorna o token.
+| POST     | /contacts  | Cria um contato para o usuário.
+| GET      | /contacts  | Lista todos os contatos do usuário.
+| GET      | /contacts/id | Retorna o contato específico do usuário.
+| PATCH    | /contacts/id | Edita o contato específico do usuário.
+| DELETE   | /contacts/id | Deleta o contato específico do usuário.
 
 ---
 
